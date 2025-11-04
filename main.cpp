@@ -171,13 +171,13 @@ class Magnetic_field : public Field{
 int main(){
     //Electric_field objects
     Electric_field default_e_Field;//Calling default destructor once
-    Electric_field e1(1,2,1);
-    Electric_field e2(1,3,5);
+    Electric_field e1(0,1e5,1e3);
+    Electric_field e2(1e-24, 2e5, 3e-6);
 
     //Magnetic field objects
     Magnetic_field default_m_Field;//Calling default destructor once
-    Magnetic_field m1(5,5,5);
-    Magnetic_field m2(1,3,2);
+    Magnetic_field m1(0,1e-23, 1e5);
+    Magnetic_field m2(23, 2e4, 3e-20);
 
     std::cout << "--------------------------------------------------" << std::endl;
     std::cout << "========Electric Field calculations======="<<std::endl;
@@ -194,7 +194,6 @@ int main(){
     std::cout << "=========Magnetic Field calculations======="<<std::endl;    
     m1.display_components();
     m2.display_components();
-    //std::cout<< "magnitude for: " << m1.print_magnitude();
     std::cout << "Value for mag field: " << m1.Calculate_B_value() <<" A" << std::endl;
     std::cout << "Copy constructor demonstration: (" << m2 <<") "<< std::endl;
     Magnetic_field m3 = m1 + m2;
