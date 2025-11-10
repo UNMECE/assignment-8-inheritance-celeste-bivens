@@ -88,7 +88,6 @@ class Electric_field : public Field{
             return E_value;
         }
 
-        //Copy constructor
         //Initializing our base class to retrieve the new values
         Electric_field(Electric_field &other) : Field(other.get_x(), other.get_y(), other.get_z()){
             std::cout << "copy constructor called" << std::endl;
@@ -171,8 +170,8 @@ class Magnetic_field : public Field{
 int main(){
     //Electric_field objects
     Electric_field default_e_Field;//Calling default destructor once
-    Electric_field e1(0,1e5,1e3);
-    Electric_field e2(1e-24, 2e5, 3e-6);
+    Electric_field e1(1,1,1);
+    Electric_field e2(2,2,2);
 
     //Magnetic field objects
     Magnetic_field default_m_Field;//Calling default destructor once
